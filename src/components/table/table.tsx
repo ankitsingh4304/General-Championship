@@ -27,7 +27,7 @@ export default function Table({ columns, rows, onRowClick }: TableProps) {
             <tr
               key={"row" + rowIndex}
               onClick={() => onRowClick(rowIndex, row)}
-              className="border-b-2 border-white group cursor-pointer transition-all duration-300 text-center hover:bg-gradient-to-r hover:from-teal-50 hover:via-cyan-50 hover:to-blue-50 hover:shadow-lg hover:scale-[1.02] transform hover:-translate-y-0.5 bg-white"
+              className="cursor-target border-b-2 border-white group cursor-pointer transition-all duration-300 text-center hover:bg-gradient-to-r hover:from-teal-50 hover:via-cyan-50 hover:to-blue-50 hover:shadow-lg hover:scale-[1.02] transform hover:-translate-y-0.5 bg-white"
               style={{
                 animation: `fadeIn 0.3s ease-out ${rowIndex * 0.05}s backwards`,
               }}

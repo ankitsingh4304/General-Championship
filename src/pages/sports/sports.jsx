@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SportsSection from "./components/SportsSection";
 import TableComponent from "./components/table";
+import TargetCursor from "../../components/cursor/targetcursor";
 import "../../App.css";
 import {
 	Dialog,
@@ -39,11 +40,12 @@ export default function Sports() {
 	};
 
 	return (
+		
 		<section className="adjust-top">
 			{/** Background */}
 			<div className="relative min-h-screen bg-gradient-to-tr from-[#fcf0fd] to-[#f6ede3]">
 				<div className="content">
-					<h2 className="text-amber-950 text-center text-4xl pt-4 pl-8 pb-2 font-bold font-[Brave81] tracking-wide">SPORTS</h2>
+					<h1 className="text-amber-950 text-center text-4xl pt-4 pl-8 pb-2 font-bold font-[Brave81] tracking-wide">SPORTS</h1>
 
 					{/**Card Component Traversing */}
 					<SportsSection handleSportClick={handleSportClick} />
@@ -74,8 +76,8 @@ export default function Sports() {
 							}}>
 							<CloseIcon />
 						</IconButton>
-						<div className='popup-container'>
-							<DialogTitle><h1 className=" font-[Brave81]">{selectedSportName} Table</h1></DialogTitle>
+						<div className='popup-container' >
+							<DialogTitle ><h1 className=" font-[Brave81]">{selectedSportName} Table</h1></DialogTitle>
 							<Divider
 								sx={{
 									borderColor: "#946F2C",
@@ -91,6 +93,7 @@ export default function Sports() {
 					</Dialog>
 				</div>
 			</div>
-		</section>
+			</section>
+		
 	);
 }

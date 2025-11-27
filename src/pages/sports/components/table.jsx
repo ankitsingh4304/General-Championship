@@ -11,7 +11,7 @@ import '../../../index.css';
     return (
       <TableContainer  >
         <Table   >
-          <TableHead>
+          <TableHead sx={{zIndex:1}}>
             <TableRow>
               <TableCell className='table-header-cell' align="left">Team</TableCell>
                 <TableCell className='table-header-cell' align="center">Points</TableCell>

@@ -3,7 +3,7 @@ import './App.scss'
 import './App.css'
 
 import Navbar from './components/navbar/navbar';
-
+import TargetCursor from './components/cursor/targetcursor';
 // Pages
 import Home from './pages/home/home';
 import Sports from "./pages/sports/sports.jsx";
@@ -26,6 +26,12 @@ function App() {
   //   }
   // }, [location.pathname]);
   return (
+    <div>
+          <TargetCursor
+            spinDuration={2}
+            hideDefaultCursor={true}
+            parallaxOn={true}
+          />
     <Router>
       <Navbar />
       <Routes>
@@ -37,7 +43,8 @@ function App() {
         <Route path="/rulebook" element={<Rulebook />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
-    </Router>
+      </Router>
+    </div>
   )
 }
 

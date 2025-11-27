@@ -27,7 +27,7 @@ export default function Navbar() {
 					</div>
 				</NavLink>
 			</div>
-			<NavRight navLinkActive={navLinkActive} onDownloadRulebook={handleDownloadRulebook} />
+			<NavRight  navLinkActive={navLinkActive} onDownloadRulebook={handleDownloadRulebook} />
 			<Hamburger navLinkActive={navLinkActive} onDownloadRulebook={handleDownloadRulebook} />
 		</nav>
 	)
@@ -43,11 +43,11 @@ interface NavRightProps {
 const NavRight = ({ navLinkActive, className: cn = "navbar-right", onDownloadRulebook }: NavRightProps) => {
 	return (
 		<div className={cn}>
-			<NavLink to='/' className={navLinkActive}>Home</NavLink>
-			<NavLink to='/sports' className={navLinkActive}>Sports</NavLink>
-			<NavLink to='/rank' className={navLinkActive}>Overall Rank</NavLink>
-			<NavLink to='/players' className={navLinkActive}>Best Players</NavLink>
-			<button className="rulebook-btn" onClick={onDownloadRulebook}>
+			<NavLink to='/' className={`${navLinkActive} cursor-target`}>Home</NavLink>
+			<NavLink to='/sports' className={`${navLinkActive} cursor-target`}>Sports</NavLink>
+			<NavLink to='/rank' className={`${navLinkActive} cursor-target`}>Overall Rank</NavLink>
+			<NavLink to='/players' className={`${navLinkActive} cursor-target`}>Best Players</NavLink>
+			<button className="rulebook-btn cursor-target" onClick={onDownloadRulebook}>
 				<span className="btn-icon"></span>
 				Rulebook
 			</button>

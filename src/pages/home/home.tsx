@@ -40,26 +40,26 @@ const Home = () => {
           {/* PDF Download Buttons */}
           <div className="pdf-buttons-container">
             <button 
-              className="pdf-download-btn championship-btn"
+              className="cursor-target pdf-download-btn championship-btn"
               onClick={() => handleDownloadPDF('championship')}
             >
-              <span className="btn-icon">🏆</span>
+              <span className="btn-icon ">🏆</span>
               General Championship Info
             </button>
           </div>
         </div>
         
         <h2 className="events-title">Upcoming Events</h2>
-        <div className="event-buttons-container">
-          <div className="event-card" style={{ backgroundImage: 'url(/assets/sports/football/Football.svg)' }}>
+        <div className="event-buttons-container ">
+          <div className="event-card cursor-target" style={{ backgroundImage: 'url(/assets/sports/football/Football.svg)' }}>
             <div className="card-overlay"></div>
             <div className="card-content">
-              <div className="card-icon">⚽</div>
+              <div className="card-icon ">⚽</div>
               <h3>Football Championship</h3>
               <p>Join the ultimate football showdown</p>
             </div>
           </div>
-          <div className="event-card" style={{ backgroundImage: 'url(/assets/sports/basketball/Basketball.svg)' }}>
+          <div className="event-card cursor-target" style={{ backgroundImage: 'url(/assets/sports/basketball/Basketball.svg)' }}>
             <div className="card-overlay"></div>
             <div className="card-content">
               <div className="card-icon">🏀</div>
@@ -67,7 +67,7 @@ const Home = () => {
               <p>Experience high-flying action</p>
             </div>
           </div>
-          <div className="event-card" style={{ backgroundImage: 'url(/assets/sports/volleyball/Volleyball.svg)' }}>
+          <div className="event-card cursor-target" style={{ backgroundImage: 'url(/assets/sports/volleyball/Volleyball.svg)' }}>
             <div className="card-overlay"></div>
             <div className="card-content">
               <div className="card-icon">🏐</div>

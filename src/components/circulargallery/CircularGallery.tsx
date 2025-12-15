@@ -40,10 +40,6 @@ const defaultItems = [
   {
     image: `/assets/sports/basketball/basketboll_orig.jpeg`,
     text: "Basketball",
-  },
-  {
-    image: `General-Championship\public\assets\sports\handball\handball_1.jpg`,
-    text: "Coastline",
   }
 ];
 type GL = Renderer['gl'];

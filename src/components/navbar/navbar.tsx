@@ -9,60 +9,60 @@ export default function Navbar() {
 
   const handleDownloadRulebook = () => {
     const link = document.createElement("a");
-    link.href = "/pdfs/rulebook.pdf"; // Replace with your actual PDF path
+    link.href = "/assets/pdfs/GC_Rulebook.pdf";
     link.download = "GC_Rulebook.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-function NavCenter() {
-  const links: { to: string; label: string }[] = [
-    { to: "/", label: "Home" },
-    { to: "/sports", label: "Sports" },
-    { to: "/rank", label: "Overall Rank" },
-    { to: "/players", label: "Best Players" },
-  ];
+  function NavCenter() {
+    const links: { to: string; label: string }[] = [
+      { to: "/", label: "Home" },
+      { to: "/sports", label: "Sports" },
+      { to: "/rank", label: "Overall Rank" },
+      { to: "/players", label: "Best Players" },
+    ];
 
-  return (
-    <div className="flex items-center gap-6 rounded-lg">
-      {links.map((l) => (
-        <NavLink key={l.to} to={l.to} end>
-          {({ isActive }) => (
-            <div className="relative inline-flex items-center">
-              {/* electric halo (only rendered when active) */}
-              {isActive && (
-                <span
-                  aria-hidden
-                  className="absolute -inset-[6px] -z-10 rounded-lg blur-[10px] opacity-95
+    return (
+      <div className="flex items-center gap-6 rounded-lg">
+        {links.map((l) => (
+          <NavLink key={l.to} to={l.to} end>
+            {({ isActive }) => (
+              <div className="relative inline-flex items-center">
+                {/* electric halo (only rendered when active) */}
+                {isActive && (
+                  <span
+                    aria-hidden
+                    className="absolute -inset-[6px] -z-10 rounded-lg blur-[10px] opacity-95
                              bg-[conic-gradient(from_0deg,_#06b6d4,_#60a5fa,_#8b5cf6,_#f472b6,_#06b6d4)]
                              animate-[spin_4s_linear_infinite]"
-                />
-              )}
+                  />
+                )}
 
-              {/* inner subtle border when active */}
-              {isActive && (
-                <span className="absolute -inset-[2px] -z-5 rounded-md bg-black/60" />
-              )}
+                {/* inner subtle border when active */}
+                {isActive && (
+                  <span className="absolute -inset-[2px] -z-5 rounded-md bg-black/60" />
+                )}
 
-              {/* actual link label */}
-              <span
-                className={
-                  "russo-one-regular cursor-target rounded-md px-3 py-1 font-bold transition-colors " +
-                  (isActive
-                    ? "text-amber-400"
-                    : "text-white/85 hover:text-amber-300")
-                }
-              >
-                {l.label}
-              </span>
-            </div>
-          )}
-        </NavLink>
-      ))}
-    </div>
-  );
-}
+                {/* actual link label */}
+                <span
+                  className={
+                    "russo-one-regular cursor-target rounded-md px-3 py-1 font-bold transition-colors " +
+                    (isActive
+                      ? "text-amber-400"
+                      : "text-white/85 hover:text-amber-300")
+                  }
+                >
+                  {l.label}
+                </span>
+              </div>
+            )}
+          </NavLink>
+        ))}
+      </div>
+    );
+  }
   return (
     <nav
       className="
@@ -100,7 +100,7 @@ function NavCenter() {
       </div>
       <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
         <div className="pointer-events-auto">
-          <NavCenter   />
+          <NavCenter />
         </div>
       </div>
 
@@ -113,10 +113,7 @@ function NavCenter() {
           📘 Rulebook
         </button>
       </div>
-      <Hamburger
-        navLinkActive={navLinkActive}
-        
-      />
+      <Hamburger navLinkActive={navLinkActive} />
     </nav>
   );
 }
@@ -125,7 +122,6 @@ interface NavRightProps {
   navLinkActive: ({ isActive }: { isActive: boolean }) => string;
   className?: string;
   children?: React.ReactNode;
-   
 }
 const NavRight = ({
   navLinkActive,
@@ -151,7 +147,6 @@ const NavRight = ({
 
 interface HamburgerProps {
   navLinkActive: ({ isActive }: { isActive: boolean }) => string;
-   
 }
 const Hamburger = ({ navLinkActive }: HamburgerProps) => {
   const [hamState, setHamState] = useState(false);
@@ -173,7 +168,6 @@ const Hamburger = ({ navLinkActive }: HamburgerProps) => {
         <NavRight
           navLinkActive={navLinkActive}
           className="hamburger-menu-content"
-           
         />
       </PopUp>
     </div>

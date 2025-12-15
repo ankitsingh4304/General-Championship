@@ -33,8 +33,8 @@ const items = [
 const Home = () => {
   const handleDownloadPDF = (pdfType: "rulebook" | "championship") => {
     const pdfUrls: Record<typeof pdfType, string> = {
-      rulebook: "/pdfs/rulebook.pdf",
-      championship: "/assets/pdfs/general-championship.pdf",
+      rulebook: "/assets/pdfs/GC_Rulebook.pdf",
+      championship: "/assets/pdfs/General-Championship.pdf",
     };
 
     const link = document.createElement("a");

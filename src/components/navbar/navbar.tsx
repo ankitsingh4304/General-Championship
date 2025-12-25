@@ -30,28 +30,25 @@ export default function Navbar() {
           <NavLink key={l.to} to={l.to} end>
             {({ isActive }) => (
               <div className="relative inline-flex items-center">
-                {/* electric halo (only rendered when active) */}
+                {/* WARM ACTIVE BACKGROUND (NO NEON, NO BLUR) */}
                 {isActive && (
                   <span
                     aria-hidden
-                    className="absolute -inset-[6px] -z-10 rounded-lg blur-[10px] opacity-95
-                             bg-[conic-gradient(from_0deg,_#06b6d4,_#60a5fa,_#8b5cf6,_#f472b6,_#06b6d4)]
-                             animate-[spin_4s_linear_infinite]"
+                    className="
+                      absolute inset-0 -z-10 rounded-md
+                      bg-gradient-to-b from-amber-400/25 to-amber-600/10
+                      ring-1 ring-amber-400/40
+                    "
                   />
                 )}
 
-                {/* inner subtle border when active */}
-                {isActive && (
-                  <span className="absolute -inset-[2px] -z-5 rounded-md bg-black/60" />
-                )}
-
-                {/* actual link label */}
+                {/* LINK LABEL */}
                 <span
                   className={
                     "russo-one-regular cursor-target rounded-md px-3 py-1 font-bold transition-colors " +
                     (isActive
                       ? "text-amber-400"
-                      : "text-white/85 hover:text-amber-300")
+                      : "text-[#f6efe5] hover:text-amber-300")
                   }
                 >
                   {l.label}
@@ -63,65 +60,71 @@ export default function Navbar() {
       </div>
     );
   }
+
   return (
     <nav
       className="
-    sticky top-0 z-50 flex items-center justify-between px-2 pt-2
-    backdrop-blur-md
-    bg-gradient-to-b from-[#4b2718]/80 
-    border-b border-white/5
-  "
+        sticky top-0 z-50 flex items-center justify-between px-3 pt-2
+        bg-gradient-to-b from-[#5a3a28]/95 to-[#3a2418]/90
+        border-b border-white/5
+      "
     >
-      <div>
-        <NavLink
-          to="/"
-          className="
-        group relative flex items-center gap-3
-      transition
-      hover:scale-[1.07]
-	  
-    "
-        >
-          <img
-            src="/assets/gclogo.png"
-            alt="GC Logo"
-            className="w-18 h-18 object-contain"
-          />
+      {/* LEFT LOGO */}
+      <NavLink
+        to="/"
+        className="group relative flex items-center gap-3 transition hover:scale-[1.05]"
+      >
+        <img
+          src="/assets/gclogo.png"
+          alt="GC Logo"
+          className="w-16 h-16 object-contain"
+        />
 
-          <div>
-            <h1 className="m-0 text-amber-400 text-3xl russo-one-regular font-bold tracking-wide ">
-              SHAURYA
-            </h1>
-            <span className="text-s russo-one-regular text-white/70">
-              The Sports Committee
-            </span>
-          </div>
-        </NavLink>
-      </div>
+        <div>
+          <h1 className="m-0 text-amber-400 text-3xl font-[Brave81] font-bold tracking-wide">
+            SHAURYA
+          </h1>
+          <span className="text-sm russo-one-regular text-[#d6c3a6]">
+            The Sports Committee
+          </span>
+        </div>
+      </NavLink>
+
+      {/* CENTER NAV (DESKTOP) */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
         <div className="pointer-events-auto">
           <NavCenter />
         </div>
       </div>
 
-      {/* right: actions */}
+      {/* RIGHT ACTIONS */}
       <div className="flex items-center gap-3">
         <button
           onClick={handleDownloadRulebook}
-          className="cursor-target hidden russo-one-regular rounded-md border border-amber-400/25 bg-amber-400/8 px-3 py-1.5 text-sm font-semibold text-amber-300 hover:bg-amber-400/12 md:inline-flex"
+          className="
+            cursor-target hidden russo-one-regular rounded-md
+            border border-amber-400/30
+            bg-amber-400/10 px-3 py-1.5
+            text-sm font-semibold text-amber-300
+            hover:bg-amber-400/15
+            md:inline-flex
+          "
         >
           📘 Rulebook
         </button>
       </div>
+
+      {/* MOBILE HAMBURGER */}
       <Hamburger navLinkActive={navLinkActive} />
     </nav>
   );
 }
 
+/* ---------------- MOBILE MENU ---------------- */
+
 interface NavRightProps {
   navLinkActive: ({ isActive }: { isActive: boolean }) => string;
   className?: string;
-  children?: React.ReactNode;
 }
 const NavRight = ({
   navLinkActive,
@@ -129,16 +132,16 @@ const NavRight = ({
 }: NavRightProps) => {
   return (
     <div className={cn}>
-      <NavLink to="/" className={`${navLinkActive} russo-one-regular `}>
+      <NavLink to="/" className={`${navLinkActive} russo-one-regular`}>
         Home
       </NavLink>
-      <NavLink to="/sports" className={`${navLinkActive} russo-one-regular  `}>
+      <NavLink to="/sports" className={`${navLinkActive} russo-one-regular`}>
         Sports
       </NavLink>
-      <NavLink to="/rank" className={`${navLinkActive} russo-one-regular `}>
+      <NavLink to="/rank" className={`${navLinkActive} russo-one-regular`}>
         Overall Rank
       </NavLink>
-      <NavLink to="/players" className={`${navLinkActive} russo-one-regular  `}>
+      <NavLink to="/players" className={`${navLinkActive} russo-one-regular`}>
         Best Players
       </NavLink>
     </div>
@@ -150,18 +153,19 @@ interface HamburgerProps {
 }
 const Hamburger = ({ navLinkActive }: HamburgerProps) => {
   const [hamState, setHamState] = useState(false);
-  const handleHamClick = () => {
-    setHamState(!hamState);
-  };
-  const handleHamClose = () => {
-    setHamState(false);
-  };
+
   return (
     <div id="hamburger-menu">
-      <button onClick={handleHamClick}>|||</button>
+      <button
+        onClick={() => setHamState(true)}
+        className="text-[#f6efe5] text-xl md:hidden"
+      >
+        ☰
+      </button>
+
       <PopUp
         open={hamState}
-        onClose={handleHamClose}
+        onClose={() => setHamState(false)}
         className="hamburger-menu-card"
       >
         <button className="close">✕</button>

@@ -43,7 +43,7 @@ export default function Sports() {
 		
 		<section >
 			{/** Background */}
-			<div className="relative min-h-screen bg-gradient-to-tr from-[#fcf0fd] to-[#f6ede3]">
+			<div className="relative min-h-screen bg-gradient-to-tr from-[#fcce89] to-[#ffcc92]">
 				<div className="content">
 					<h1 className="text-amber-950 text-center text-4xl pt-4 pl-8 pb-2 font-bold font-[Brave81] tracking-wide">SPORTS</h1>
 

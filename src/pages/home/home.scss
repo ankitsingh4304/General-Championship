@@ -1,54 +1,47 @@
-// Color Variables - Based on your design
-$primary-dark: #3d1f15;
-$secondary-dark: #4a2318;
-$medium-brown: #8b6f47;
-$golden-brown: #9d7a4d;
-$cream-base: #f5ead5;
-$light-beige: #e8dcc4;
-$accent-blue: #4a7c9e;
-$dark-text: #2c1810;
+// ==============================
+// WARM STONE / CLAY CANVAS
+// ==============================
+.home-bg {
+  position: relative;
+  isolation: isolate;
 
-.glass {
-  background: rgba(255, 255, 255, 0.12); /* transparent */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background:
+    /* TOP SOFT LIGHT */
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(255, 214, 170, 0.45),
+      transparent 60%
+    ),
 
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 16px;
+    /* SIDE DEPTH */
+    radial-gradient(
+      circle at 20% 55%,
+      rgba(210, 195, 175, 0.35),
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 80% 55%,
+      rgba(200, 185, 165, 0.30),
+      transparent 65%
+    ),
 
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-}
+    /* SOFT TEXTURE (STONE FEEL) */
+    repeating-linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px,
+      transparent 18px
+    ),
 
+    /* BASE STONE GRADIENT */
+    linear-gradient(
+      to bottom,
+      #fcce89,
+      #e4d7c5 45%,
+      #d8c9b3
+    );
 
-
-.home-bg{
-   background-size: cover;
-  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('./homebg.png');
-  
 }
- 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.popup{
-  animation: fadeInUp 0.6s ease-out;
-}
-.circular-gallery-container {
-  width: 100%;
-  height: 100%;
-   max-width: 2500px;
-   margin-top: 40px;
-  pointer-events: none; // Ensure it doesn't interfere with other interactions
-  z-index: 1;
-}
- 

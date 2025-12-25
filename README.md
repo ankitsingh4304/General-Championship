@@ -1,4 +1,4 @@
-# Global Championship - Sports Website
+# General Championship - Sports Website
 
 A React-based sports website homepage showcasing major events, best players, and overall ranks with a clean and visible navbar.
 

